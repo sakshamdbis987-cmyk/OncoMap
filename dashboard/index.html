@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07141f">
+  <meta name="description" content="OncoMap is an educational breast cancer bioinformatics explorer for GEO dataset GSE42568.">
+  <title>OncoMap | Breast Cancer Bioinformatics Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#overview">Skip to research dashboard</a>
+  <header class="topbar">
+    <a class="brand" href="#overview" aria-label="OncoMap overview">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="brand-name">OncoMap</span>
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-context">RESEARCH EXPLORER</span>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
+      <span></span><span></span>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+      <a href="#overview" class="nav-link is-active" aria-current="page">Overview</a>
+      <a href="#why-research" class="nav-link">Why it matters</a>
+      <a href="#project-journey" class="nav-link">Project journey</a>
+      <a href="#gene-explorer" class="nav-link">Gene explorer</a>
+      <a href="#volcano" class="nav-link">Volcano plot</a>
+      <a href="#heatmap" class="nav-link">Heatmap</a>
+      <a href="#findings" class="nav-link">Findings</a>
+      <a href="#methodology" class="nav-link">Methodology</a>
+    </nav>
+    <span class="offline-indicator"><span></span> LOCAL ONLY</span>
+  </header>
+
+  <main>
+    <section class="overview section-wrap" id="overview" aria-labelledby="page-title">
+      <div class="overview-copy">
+        <p class="eyebrow"><span class="eyebrow-rule"></span> EDUCATIONAL BIOINFORMATICS PROJECT</p>
+        <h1 id="page-title">OncoMap</h1>
+        <p class="hero-subtitle">Breast Cancer Bioinformatics Explorer</p>
+        <p class="hero-description">A focused view of public breast-tissue gene-expression data, with probe-level results kept visible for careful interpretation.</p>
+        <div class="dataset-tags" aria-label="Dataset details">
+          <span><span class="tag-label">GEO SERIES</span> GSE42568</span>
+          <span><span class="tag-label">ARRAY PLATFORM</span> GPL570</span>
+        </div>
+      </div>
+      <aside class="overview-note" aria-label="Project purpose">
+        <span class="note-index">PROJECT NOTE / 01</span>
+        <p>Exploring patterns is a starting point for research, not a medical conclusion.</p>
+        <a href="#methodology">Read the methods <span aria-hidden="true">&#8594;</span></a>
+      </aside>
+      <div class="overview-metrics" aria-label="Dataset summary">
+        <article class="metric metric-total">
+          <span class="metric-label">TOTAL SAMPLES</span>
+          <strong>121</strong>
+          <span class="metric-detail">GEO sample records</span>
+        </article>
+        <article class="metric metric-cancer">
+          <span class="metric-label">BREAST CANCER</span>
+          <strong>104</strong>
+          <span class="metric-detail">tumour tissue samples</span>
+        </article>
+        <article class="metric metric-normal">
+          <span class="metric-label">NORMAL BREAST</span>
+          <strong>17</strong>
+          <span class="metric-detail">normal tissue samples</span>
+        </article>
+        <article class="metric metric-genes">
+          <span class="metric-label">RESEARCH GENES</span>
+          <strong>08</strong>
+          <span class="metric-detail">selected for exploration</span>
+        </article>
+      </div>
+      <div class="gene-ribbon" aria-label="Selected research genes">
+        <span class="ribbon-label">TARGET PANEL</span>
+        <span>BRCA1</span><span>BRCA2</span><span>TP53</span><span>ERBB2</span>
+        <span>PIK3CA</span><span>ESR1</span><span>PTEN</span><span>EGFR</span>
+      </div>
+      <div class="research-question" aria-labelledby="research-question-title">
+        <span class="question-label" id="research-question-title">RESEARCH QUESTION</span>
+        <p>How do selected breast cancer-associated gene-expression probes differ between normal breast tissue and breast cancer tissue?</p>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section" id="why-research" aria-labelledby="why-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-rule"></span> BIOLOGICAL CONTEXT</p>
+          <h2 id="why-title">Why This Research Matters</h2>
+        </div>
+      </div>
+      <p class="section-intro">The selected genes connect to several themes often studied in breast cancer. These are useful ways to organize the question, not claims that one expression measurement explains a tumour.</p>
+      <div class="theme-grid">
+        <article class="theme-item">
+          <span class="theme-index">01 / GENOME MAINTENANCE</span>
+          <h3>DNA repair</h3>
+          <p>BRCA1 and BRCA2 are associated with repairing damaged DNA and maintaining genome stability.</p>
+        </article>
+        <article class="theme-item">
+          <span class="theme-index">02 / SIGNAL TRANSDUCTION</span>
+          <h3>Cell growth signalling</h3>
+          <p>ERBB2, PIK3CA and EGFR are linked to pathways that transmit signals involved in cell growth and survival.</p>
+        </article>
+        <article class="theme-item">
+          <span class="theme-index">03 / CELL-CYCLE CONTROL</span>
+          <h3>Tumour suppression</h3>
+          <p>TP53 and PTEN are associated with cellular controls that can limit abnormal growth.</p>
+        </article>
+        <article class="theme-item">
+          <span class="theme-index">04 / HORMONE RESPONSE</span>
+          <h3>Hormone receptor signalling</h3>
+          <p>ESR1 encodes the estrogen receptor alpha, which is involved in hormone-responsive signalling.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section" id="project-journey" aria-labelledby="journey-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-rule"></span> PROJECT WORKFLOW</p>
+          <h2 id="journey-title">Project journey</h2>
+        </div>
+      </div>
+      <ol class="journey-list">
+        <li><span>01</span><strong>Public dataset selection</strong></li>
+        <li><span>02</span><strong>Data inspection</strong></li>
+        <li><span>03</span><strong>Probe annotation</strong></li>
+        <li><span>04</span><strong>Gene selection</strong></li>
+        <li><span>05</span><strong>Differential-expression analysis</strong></li>
+        <li><span>06</span><strong>Scientific visualisation</strong></li>
+        <li><span>07</span><strong>Interactive exploration</strong></li>
+      </ol>
+    </section>
+
+    <section class="section-wrap content-section" id="gene-explorer" aria-labelledby="explorer-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-rule"></span> INTERACTIVE TABLE</p>
+          <h2 id="explorer-title">Gene explorer</h2>
+        </div>
+        <span class="section-number">01</span>
+      </div>
+      <div class="explorer-panel">
+        <div class="upload-row">
+          <div class="upload-copy">
+            <span class="upload-step">LOCAL FILE / GEO2R</span>
+            <h3>Load differential-expression results</h3>
+            <p>Select <code>Data/processed/GSE42568.top.table.tsv</code> from your computer. The file is read in this browser only.</p>
+          </div>
+          <label class="upload-button" for="tsv-file">
+            <span class="upload-icon" aria-hidden="true">&#8593;</span>
+            <span>Choose TSV file</span>
+            <input id="tsv-file" type="file" accept=".tsv,.txt,text/tab-separated-values,text/plain">
+          </label>
+        </div>
+        <p class="upload-status" id="upload-status" role="status" aria-live="polite">No file loaded yet. Choose the GEO2R TSV to view real probe-level results.</p>
+        <div class="explorer-controls" aria-label="Table filters">
+          <label class="control-field" for="gene-filter">
+            <span>RESEARCH GENE</span>
+            <select id="gene-filter" disabled>
+              <option value="all">All eight genes</option>
+              <option value="BRCA1">BRCA1</option>
+              <option value="BRCA2">BRCA2</option>
+              <option value="TP53">TP53</option>
+              <option value="ERBB2">ERBB2</option>
+              <option value="PIK3CA">PIK3CA</option>
+              <option value="ESR1">ESR1</option>
+              <option value="PTEN">PTEN</option>
+              <option value="EGFR">EGFR</option>
+            </select>
+          </label>
+          <label class="control-field search-field" for="table-search">
+            <span>SEARCH RESULTS</span>
+            <input id="table-search" type="search" placeholder="Search gene, probe, or symbol" disabled>
+          </label>
+          <span class="result-count" id="result-count">0 matching probes</span>
+        </div>
+        <div class="table-message" id="table-message">
+          <span class="message-symbol" aria-hidden="true">i</span>
+          <p>Upload the GEO2R table to explore its measured probes. This dashboard does not invent or pre-fill result rows.</p>
+        </div>
+        <div class="table-scroll" id="table-scroll" hidden>
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th scope="col" data-sort-column="gene" aria-sort="none"><button type="button" data-sort="gene" aria-label="Sort by target gene"><span class="sort-label">Target gene</span> <span class="sort-mark" aria-hidden="true">&#8597;</span></button></th>
+                <th scope="col" data-sort-column="probe" aria-sort="none"><button type="button" data-sort="probe" aria-label="Sort by probe ID"><span class="sort-label">Probe ID</span> <span class="sort-mark" aria-hidden="true">&#8597;</span></button></th>
+                <th scope="col">GEO2R gene symbol</th>
+                <th scope="col" data-sort-column="logFC" aria-sort="none"><button type="button" data-sort="logFC" aria-label="Sort by log fold change"><span class="sort-label">logFC</span> <span class="sort-mark" aria-hidden="true">&#8597;</span></button></th>
+                <th scope="col" data-sort-column="adjP" aria-sort="ascending"><button type="button" data-sort="adjP" aria-label="Sort by adjusted P-value, ascending"><span class="sort-label">Adjusted P-value</span> <span class="sort-mark" aria-hidden="true">&#8593;</span></button></th>
+                <th scope="col" data-sort-column="significance" aria-sort="none"><button type="button" data-sort="significance" aria-label="Sort by significance"><span class="sort-label">Result</span> <span class="sort-mark" aria-hidden="true">&#8597;</span></button></th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrap content-section" id="volcano" aria-labelledby="volcano-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-rule"></span> DIFFERENTIAL EXPRESSION</p>
+          <h2 id="volcano-title">Volcano plot</h2>
+        </div>
+        <span class="section-number">02</span>
+      </div>
+      <figure class="figure-panel">
+        <div class="figure-toolbar"><span>GSE42568 / GEO2R</span><div class="figure-actions"><span>ADJUSTED P &lt; 0.05</span><a href="../figures/volcano_plot.svg" target="_blank" rel="noopener noreferrer">Open full-size figure <span aria-hidden="true">&#8599;</span></a></div></div>
+        <p class="figure-scroll-hint"><span aria-hidden="true">&#8596;</span> Wide figure: scroll horizontally to inspect the details.</p>
+        <div class="figure-viewport"><img src="../figures/volcano_plot.svg" alt="Volcano plot of GEO2R differential expression results. Points show log fold change and adjusted P-value; target probes are highlighted."></div>
+        <figcaption>Each dot represents a probe. Color indicates logFC direction for probes passing the adjusted P-value threshold. Target probes are outlined and significant target probes are labeled.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section-wrap content-section" id="heatmap" aria-labelledby="heatmap-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-rule"></span> SAMPLE-LEVEL PATTERNS</p>
+          <h2 id="heatmap-title">Gene-expression heatmap</h2>
+        </div>
+        <span class="section-number">03</span>
+      </div>
+      <figure class="figure-panel">
+        <div class="figure-toolbar"><span>38 PROBES / 121 SAMPLES</span><div class="figure-actions"><span>ROW-WISE Z-SCORE</span><a href="../figures/gene_expression_heatmap.svg" target="_blank" rel="noopener noreferrer">Open full-size figure <span aria-hidden="true">&#8599;</span></a></div></div>
+        <p class="figure-scroll-hint"><span aria-hidden="true">&#8596;</span> Wide figure: scroll horizontally to inspect the details.</p>
+        <div class="figure-viewport"><img src="../figures/gene_expression_heatmap.svg" alt="Heatmap of row-wise standardized expression for 38 individual target probes across normal breast and breast cancer samples."></div>
+        <figcaption>Each row is a separate array probe. Blue indicates values below that probe's average, white is near average, and red is above average. This view is descriptive and keeps probes separate.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section-wrap content-section" id="findings" aria-labelledby="findings-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-rule"></span> EXPLORATORY SUMMARY</p>
+          <h2 id="findings-title">Research findings</h2>
+        </div>
+        <span class="section-number">04</span>
+      </div>
+      <div class="findings-intro">
+        <p>These observations come from the supplied GEO2R table for the eight selected genes. They describe individual probe rows, not combined gene-level measurements.</p>
+        <span class="threshold-chip">18 significant probes / 38<br>adj. P-value &lt; 0.05</span>
+      </div>
+      <div class="finding-grid">
+        <article class="finding-card finding-down">
+          <span class="finding-count">14 <small>/ 38</small></span>
+          <h3>Significant probes with negative logFC</h3>
+          <p>For the cancer-versus-normal contrast, these probes have lower reported measurements in cancer. This includes all 3 PIK3CA probes, 6 of 8 PTEN probes, and 5 of 9 EGFR probes.</p>
+        </article>
+        <article class="finding-card finding-up">
+          <span class="finding-count">4 <small>/ 38</small></span>
+          <h3>Significant probes with positive logFC</h3>
+          <p>One probe each for BRCA2, TP53, ERBB2, and ESR1 has positive logFC. The other probes for those genes do not pass the threshold.</p>
+        </article>
+        <article class="finding-card finding-caution">
+          <span class="finding-count">20 <small>/ 38</small></span>
+          <h3>Selected probes not below the threshold</h3>
+          <p>These probes have adjusted P-values of 0.05 or higher. Their direction alone should not be described as a statistically significant difference.</p>
+        </article>
+      </div>
+      <aside class="interpretation-note">
+        <span class="note-mark" aria-hidden="true">!</span>
+        <p><strong>Probe-level, not gene-level:</strong> one gene can have several probes, and probes for the same gene can differ in direction or significance. Probe <code>217492_s_at</code> is annotated to both PTEN and PTENP1. These exploratory results do not establish cause, diagnosis, or clinical value.</p>
+      </aside>
+    </section>
+
+    <section class="section-wrap content-section" id="methodology" aria-labelledby="methodology-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow"><span class="eyebrow-rule"></span> STUDY CONTEXT</p>
+          <h2 id="methodology-title">Methodology &amp; limitations</h2>
+        </div>
+        <span class="section-number">05</span>
+      </div>
+      <div class="method-grid">
+        <article class="method-card">
+          <span class="method-label">DATASET</span>
+          <h3>Public microarray study</h3>
+          <p>NCBI GEO Series <strong>GSE42568</strong>, measured with the Affymetrix Human Genome U133 Plus 2.0 Array (<strong>GPL570</strong>). The series contains 121 samples: 104 breast cancer and 17 normal breast tissue samples.</p>
+        </article>
+        <article class="method-card">
+          <span class="method-label">PROCESSING</span>
+          <h3>Processed measurements</h3>
+          <p>The GEO2R results are based on GC-RMA processed array measurements. The table remains probe-level; the annotation file provides probe-to-symbol mappings, including some one-to-many mappings.</p>
+        </article>
+        <article class="method-card">
+          <span class="method-label">STATISTICS</span>
+          <h3>GEO2R / limma</h3>
+          <p>GEO2R uses the limma framework to estimate differential expression. Adjusted P-values use the Benjamini-Hochberg procedure to account for testing many probes. The dashboard displays the supplied results and does not rerun this model.</p>
+        </article>
+        <article class="method-card method-limitations">
+          <span class="method-label">LIMITATIONS</span>
+          <h3>Use as an exploration, not a conclusion</h3>
+          <p>The groups are imbalanced, and clinical or technical factors may affect measurements. Multiple probes can represent a gene, annotations can be ambiguous, and these results need independent validation. No diagnostic or treatment decisions should be made from this project.</p>
+        </article>
+      </div>
+      <div class="source-links" aria-label="Official research sources">
+        <span class="source-label">OFFICIAL SOURCES</span>
+        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE42568" target="_blank" rel="noopener noreferrer">NCBI GEO Series GSE42568 <span aria-hidden="true">&#8599;</span></a>
+        <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570" target="_blank" rel="noopener noreferrer">NCBI GEO Platform GPL570 <span aria-hidden="true">&#8599;</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><span class="brand-mark small" aria-hidden="true"><span></span><span></span><span></span></span><strong>OncoMap</strong></div>
+    <p>Educational research project only. Not a diagnostic tool.</p>
+    <a href="#overview">Back to top <span aria-hidden="true">&#8593;</span></a>
+  </footer>
+</body>
+</html>

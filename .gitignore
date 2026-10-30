@@ -1,0 +1,33 @@
+# Downloaded research data and annotation files
+/Data/raw/
+/Data/annotation/
+
+# Empty backup folders
+/Data/Processed_backup/
+/Data/Raw_backup/
+/Data/Processed_backup
+/Data/Raw_backup
+
+# Temporary files and logs
+*.tmp
+*.temp
+*.log
+*.bak
+
+# Windows-generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
